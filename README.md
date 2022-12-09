@@ -1,5 +1,11 @@
 # MERN NOTES-APP BACKEND
 
+## About
+
+- This is backend of a simple basic notes app.
+- For frontend just visit this link 👇👇👇
+- [Basic-Notes-App-Frontend]()
+
 ## Folders and Files structure
 
 - ### config
@@ -42,8 +48,7 @@
 
 ## Usage Guide
 
-- https://github.com/abhijitnr/NOTES-APP-MERN.git
-- cd backend
+- https://github.com/abhijitnr/Basic-Notes-App-Backend.git
 - npm install
 - add PORT and JWT_TOKEN in .env file
 - npm start
