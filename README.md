@@ -4,7 +4,7 @@
 
 - This is backend of a simple basic notes app.
 - For frontend just visit this link 👇👇👇
-- [Basic-Notes-App-Frontend]()
+- [Basic-Notes-App-Frontend](https://github.com/abhijitnr/Basic-Notes-App-Frontend)
 
 ## Folders and Files structure
 
@@ -50,7 +50,7 @@
 
 - https://github.com/abhijitnr/Basic-Notes-App-Backend.git
 - npm install
-- add PORT and JWT_TOKEN in .env file
+- add PORT , JWT_TOKEN and MONGO_URL in .env file
 - npm start
 - now backend is ready to use
 
