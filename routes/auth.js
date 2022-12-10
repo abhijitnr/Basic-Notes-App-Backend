@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 
 /* SIGNUP */
 authRoute.post("/signup", async (req, res) => {
-  const { email, password, name, age } = req.body;
+  const { email, password } = req.body;
   const userPresent = await User.findOne({ email });
 
   if (userPresent?.email) {
@@ -14,7 +14,7 @@ authRoute.post("/signup", async (req, res) => {
   }
   try {
     bcrypt.hash(password, 5, async (err, encyptedpassword) => {
-      const user = new User({ email, password: encyptedpassword, name, age });
+      const user = new User({ email, password: encyptedpassword });
       await user.save();
       res.send("Signup successfully");
     });

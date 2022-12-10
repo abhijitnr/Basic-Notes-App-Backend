@@ -1,13 +1,21 @@
 const express = require("express");
+const cors = require("cors");
 const dotenv = require("dotenv");
-const connect = require("./config/db");
+const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 dotenv.config();
 const noteRoute = require("./routes/notes");
-const cors = require("cors");
 const { authenticateUser } = require("./middleware/authentication");
 
 const app = express();
+
+/* MONGODB CONNECT */
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => console.log(`Database coonected successfully`))
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.use(express.json());
 app.use(cors());
@@ -41,12 +49,6 @@ app.use("/notes", noteRoute);
 // });
 
 /* LISTENING PORT */
-app.listen(process.env.PORT, async () => {
-  try {
-    await connect;
-    console.log("DB Connected");
-  } catch (error) {
-    console.log("Unable to connect DB");
-  }
+app.listen(process.env.PORT, () => {
   console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
